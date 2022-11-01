@@ -1,24 +1,22 @@
-UNIT 6
-Object Oriented Programming
+# Object Oriented Programming
 
-A Java Class
+## A Java Class  
 
-Class
+**Class**
 
-Models "things" in the real or business world
+Models "things" in the real or business world.  
 
-Java Class
-Provides
-State and Behavior
+Java Class Provides State and Behavior  
 
-Example Classes (Entities)
+**Example Classes (Entities)**  
 
 * Employee
 * Account
 * Car
 * Message
 
-Class 	vs Object
+
+**Class vs Object**
 
 Class --> New Data Type
 Object --> Value of that type
