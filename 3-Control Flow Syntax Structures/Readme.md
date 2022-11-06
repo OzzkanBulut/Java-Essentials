@@ -1,5 +1,6 @@
 # FLOW STATEMENTS / CONTROL STATEMENTS  
 
+```
 if(a>b) b = 0;  
 
 if(a>b){  
@@ -10,7 +11,8 @@ else if (a < b) {
 System.out.println("a is lesser");  
 } else {  
 System.out.println("a and be are equal");  
-}  
+} 
+```
 This is referred to as if-else ladder.  
 
 **Nested If**  
@@ -27,7 +29,7 @@ if(a>b) {
 **DO NOT MAKE LADDERS OF IF ELSES!**  
 
 **USE SWITCH CASE**  
-
+```
 switch(a) {
 	
 	case 0:
@@ -42,10 +44,11 @@ switch(a) {
 	default:
 	   System.out.println("a is >=3");
 }  
+```
 The reason why a break is needed in switch case is because of the  
 
 **Switch Fall-Through Pattern:**  
-
+```
 switch(a) {
 	case 0:  
 	case 2:  
@@ -65,6 +68,7 @@ switch(a) {
 	default:  
 	    System.out.println(" a is greater than 10");  
 }  
+```
 
 **SWITCH VALUE**  
 
@@ -87,7 +91,7 @@ They can be among this primitives:
 **JAVA 14 FEATURE**  
 
 **Switch Expression**    
-
+```
 int numletters = switch(day) {--> day is an enum value   
 
 case MONDAY, FRIDAY, SUNDAY -> 6;  
@@ -96,6 +100,7 @@ case THURSDAY, SATURDAY -> 8; --> **THERE IS NO BREAKS!**
 case WEDNESDAY -> 9; --> If day is wednesday, return 9    
 
 };  
+```
 
 **SWITCH EXPRESSION** 
 - No breaks required --> No fall through  
@@ -105,21 +110,21 @@ case WEDNESDAY -> 9; --> If day is wednesday, return 9
 ## ITERATION STATEMENTS  
 
 **"Classic" For Loop**  
-
+```
 for(int i = 0; i<10;i++)(initialization;condition;action per iteration) {  
     System.out.println(i);  
 } This curly bracket ends the scope! No more int i from this.  
-
+```
 **COMMAS IN FOR LOOP**  
-
+```
 int i,j;  
 
 for(i=0, j=10; 1<10; i++, j--) {  
    System.out.println(i+j);  
 }  
-
+```
 **For-each Loop**  
-
+```
 for (type iterationVariable : collection) { // collectioans are like arrays,lists or sets. Works for all types of collections    
     block-statement  
 }  
@@ -135,9 +140,9 @@ total = total + element;
 We can also use var  
 for(var element : someNumbers)  
 Compiler looks the someNumbers collection type and assumes the type.  
-
+```
 **NESTED LOOPS**  
-
+```
 int matrix[][] = new int[10][20];  
 
 for (int i=0; i<10; i++) {  
@@ -145,15 +150,15 @@ for(int j=0; j<20; j++) {
 matri[i][j] = i * j;  
 }  
 }  
-
+```
 **NESTED LOOPS WITH FOR-EACH**  
-
+```
 for( int[] subArray : matrix){   
   for(int element: subArray){  
     System.out.println("Element is " + element);  
   }  
 }  
-
+```
 Not a lot of people use this, but it can be used.  
 
 **When the index is needed use CLASSIC FOR**  
@@ -183,23 +188,23 @@ Break --> Ends the loop
 Continue --> Skip to the next iteration  
 
 **BREAK**  
-
+```
 for (int i = 0 ; i<10;i++) {  
 	if(i %% 5) break;  
 	System.out.println(i); // Prints till 4  
 }  
-
+```
 **CONTINUE**  
-
+```
 for (int i = 0 ; i<10;i++) {  
 	if(i %% 5) continue;  
 	System.out.println(i); // Prints 0 to 9 but skips 5  
 }  
-
+```
 **REVISITING SCOPING**  
 
 **Example**  
-
+```
 if (i > 5) { // Scope of foo starts here  
 	int foo = 20 ;  
 	// Statements  
@@ -210,9 +215,9 @@ if (i > 5){ // Scope of foo starts here
 } else { // Scope of foo ends here  
 	foo = 30; // Foo is not declared here, so compiler wont recognize it  
 }  
-
+```
 **NESTED LOOPS EXAMPLE**  
-
+```
 int matrix[][] = new int[10][20];  
 
 for(int i = 0 ; i< 10 ; i++) { // Scope of i starts here  
@@ -220,7 +225,7 @@ for(int i = 0 ; i< 10 ; i++) { // Scope of i starts here
 	martix[i][j] = i*j; // Both are in the scope, so you can do this.  
 	} // Scope of j ends here  
 } // Scope of i ends here  
-
+```
 
 
 
