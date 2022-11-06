@@ -32,11 +32,11 @@ CLASS SYNTAX
 
 class ClassName{
 
-Member variables --> State
-Methods--> Behavior --> Behavior
+Member variables --> State  
+Methods--> Behavior --> Behavior  
 }
 
-
+```
 class ClassName {
 	type memberVariable;
 	type memberVariable; // Also called instance variables
@@ -49,54 +49,73 @@ class ClassName {
 		// method body
 	}
 }
-
+```
 
 EXAMPLE CLASS DEFINITION
-	
+```	
 class Car { // Pascal Case
 	int seats;
 	int wheels;
 	double weight;
 	double topSpeed; // Camel Case
 }
-
+```
 When we created class Car, we actually created a data type.
+
 
 Car myNewCar; // This is a new variable of type Car.
 
+
 myNewCar = new Car(); // We created a new instance of a class
+
 
 Therewill be a new instance of this class, which means its goınna get a copy of 
 the variables in that class.
 
+
 neighborCar = new Car() ; // Gets ANOTHER copy of these variables.
+
  
 neighborCar and myNewCar are two instances.
 
+```
 myNewCar.seats = 4 ;
 neighborCar.seats = 2 ;
 System.out.println(myNewCar.seats); // Prints 4
 System.out.println(neighborCar.seats) // Prints 2 
-
+```
 HOW DOES THIS WORK ? 
 
 It works by Usıng Object References
 
 When you create a new variable of a class type, java runtime is gonna allocatate that
 variable.
-Car myNewCar; // This does not allocate ! Only declares // This is the object reference, points to the instance address. Creating a reference variable here
+
+
+Car myNewCar; // This does not allocate ! Only declares // This is the object reference, points to the instance address. Creating a reference variable here  
+
+
 myNewCar = new Car(); // This is creating a new instance and allocates memory.THIS IS THE INSTANCE
 
-Car neighbor; // it creates another variable but allocates a memory yet.
-neighborCar = new Car(); // Another instance of Car created. ** new ALLOCATES MEMORY SPACE**
 
-References can be assigned to other references
+Car neighbor; // it creates another variable but allocates a memory yet.  
 
-myNewCar = neighborCar; // Kinda like in the strings, those 2 references refer to the same object
 
-neighborCar = null ; // This reference is erased. Does not point to anywhere.Does not have an arrow anymore
+neighborCar = new Car(); // Another instance of Car created. ** new ALLOCATES MEMORY SPACE**  
+
+References can be assigned to other references  
+
+
+myNewCar = neighborCar; // Kinda like in the strings, those 2 references refer to the same object  
+
+
+neighborCar = null ; // This reference is erased. Does not point to anywhere.Does not have an arrow anymore  
+
+
 myNewCar still exists to that same object.
-** Get an ss of 603.04.30**
+
+![image](https://user-images.githubusercontent.com/67637654/200166246-1491c6bd-38c5-4d0e-a624-b1121f8adca9.png)
+
 
 THINGS TO REMEMBER
 * Classes are blueprints and Objects are instances
@@ -111,6 +130,7 @@ THINGS TO REMEMBER
 
 **VARIABLE SHADOWING** COMMON INTERVIEW QUESTION
 
+```
 class Car {
 	int seats;
 	int whells;
@@ -121,11 +141,13 @@ class Car {
 		return seats >= seats; // This is instance variable shadowing. This is happens when we have save variable names between the method variable and instance variable.
 	}
 }
+```
+
 We can solve this problem with : 
 The THIS reference
 Refers to the instance the metwod will be run on
 
-
+```
 class Car {
 	int seats;
 	int whells;
@@ -136,10 +158,10 @@ class Car {
 		return this.seats >= seats;
 	}
 }
+```
 
-
-CONSTRUCTORS
-
+**CONSTRUCTORS**
+```
 class Car {
 	int seats;
 	int wheels;
@@ -158,10 +180,10 @@ class Car {
 		return seats == 4;
 	}
 }
+```
 
 
-
-JAVA CONSTRUCTORS
+**JAVA CONSTRUCTORS**
 
 - Must be same name as class
 - No return type
@@ -170,7 +192,7 @@ JAVA CONSTRUCTORS
 
 How ‎will the runtime know which constructor to use ? 
 Like This:
-
+```
 class Car {
 	int seats;
 	int wheels;
@@ -185,13 +207,13 @@ class Car {
 		this.seats = numberOfSeats; // use this when shadowing
 	}
 }
-
+```
 Java has a default constructor for classes that you dont write but it is already there.
 When you dont write a constructor yourself, something is happening behind the scenes to make sure that you get a new object and that is object is being constructed somehow.
 
 
-CALLING A CONSTRUCTOR FROM CONSTRUCTOR
-
+**CALLING A CONSTRUCTOR FROM CONSTRUCTOR**
+```
 class Car {
 	int seats;
 	int wheels;
@@ -207,10 +229,10 @@ class Car {
 		this.seats =seats; // So no matter which constructor you call, mileage of those 2 car c1 and c2 will always be 0.
 	}
 }
+```
 
-
-OBJECT INSTANCE VARIABLES
-
+**OBJECT INSTANCE VARIABLES**
+```
 class Car {
 	String name; // String is an object
 	String make;
@@ -220,19 +242,18 @@ class Car {
 	double topSpeed;
 	Tire[] tires; // Tire is a class.This is a tire array that collects tire objects.
 }
-
-OBJECT ARGUMENTS
-
+```
+**OBJECT ARGUMENTS**  
+```
 boolean isHeavierThan(Car c) { // This method takes a Car object as an argument !
 	return this.weight > c.weight;
 }
+```
 
+**CONSTRUCTOR OBJECT ARGUMENTS**  
 
-
-CONSTRUCTOR OBJECT ARGUMENTS
-
-COPY CONSTRUCTOR PATTERN
-
+**COPY CONSTRUCTOR PATTERN**  
+```
 class Car{ // Create a car object by copying an another car object
 	int seats;
 	int wheels;
@@ -246,18 +267,18 @@ class Car{ // Create a car object by copying an another car object
 	this.mileage = other.mileage;
 	}
 }
-
+```
 ** WHAT IS A COPY CONSTRUCTOR ? ** Interview Question
 It is used when you want to clone an object or take instances of that object.
 Takes the object you want to be copied as a constructor argument.
 
 
-PASSING OBJECTS AS METHOD ARGUMENTS
+**PASSING OBJECTS AS METHOD ARGUMENTS**  
 
-Call BY VALUE or CALL BY REFERENCE
+**Call BY VALUE or CALL BY REFERENCE**  
 
 In java, it is called by value all the time.
-
+```
 class Car{ 
 	int seats;
 	int wheels;
@@ -274,23 +295,23 @@ class Car{
 	}
 }
 
-
-
 Car car = new Car();
 int capacity = 3 ;
 car.canSeat(capacity); 
-
-when we change the value of numberOfPeople to 100, the capacity variable will
+```
+When we change the value of numberOfPeople to 100, the capacity variable will
 not change.Because in java, we call the methods by value, not by reference.
 so when we type car.canSeat(capacity), we are not giving the canSeat method
 the reference of capacity, we are only giving the value of capacity which is 3.
-So, original capacity will not be affected.This is why Java is a CALL BY METHOD LANGUAGE.
+So, original capacity will not be affected.This is why **Java is a CALL BY METHOD LANGUAGE**.
 
 
 
 
-OBJECT REFERENCES AS ARGUMENTS ( SS 607.5.40)
+**OBJECT REFERENCES AS ARGUMENTS**  
 
+![image](https://user-images.githubusercontent.com/67637654/200166488-e6009b4f-3141-419a-ba2f-0b5d9f0993c2.png)  
+```
 Car car = new Car();
 Car anotherCar = new Car();
 car.canSeat(3);
@@ -300,7 +321,7 @@ car.isHeaviewThan(anotherCar);
 boolean isHeavierThan(Car c) {
 	return this.weight > c.weight ;
 }
-
+```
 When we pass an object reference to the method, they will be the same references.
 In this example, anotherCar and c references are same because they are pointing
 to the same object instance that is created in the heap.So when there is a change
@@ -313,7 +334,7 @@ to change the reference!
 Interview Question ---> Call by value and Call by Reference!
 
 
-THINGS TO REMEMBER
+**THINGS TO REMEMBER**  
 
 - Java implements call by value
 - Any value passed as parameters is "copied" to the method arguments
