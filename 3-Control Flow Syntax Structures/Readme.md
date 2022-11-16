@@ -17,6 +17,7 @@ This is referred to as if-else ladder.
 
 **Nested If**  
 
+```
 if(a>b) {
 	System.out.println("a is greater");
 	if(isTooBig(a)) System.out.println("a is too big");
@@ -25,6 +26,7 @@ if(a>b) {
 } else {
 	System.out.println(" a and b are equal");
 } 
+```
 
 **DO NOT MAKE LADDERS OF IF ELSES!**  
 
